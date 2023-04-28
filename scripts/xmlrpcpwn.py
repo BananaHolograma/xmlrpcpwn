@@ -113,10 +113,10 @@ def is_valid_hostname(url: str) -> bool:
     return all(allowed.match(label) for label in labels)
 
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description='''
-Interact with xmlrpc.php file on wordpress site
-EXAMPLES:
+    Interact with xmlrpc.php file on wordpress site
+    EXAMPLES:
         xmlrpc-pwn -d example.com 
         xmlprc-pwn --domain example.com --pingback https://receiver.com:8080
         xmlrc-pwn -d example.es --check-only
@@ -148,3 +148,7 @@ EXAMPLES:
                 "[-] This site does not seems to have xmlrpc.php available to interact with")
     else:
         parser.print_help()
+
+
+if __name__ == '__main__':
+    main()
